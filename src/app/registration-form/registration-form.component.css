@@ -197,8 +197,13 @@ mat-form-field .mat-select[disabled] {
 }
 
 @media (max-width: 480px) {
+
+  .header-links, .login-link {
+    font-size: 15px;
+
+  }
   .logo {
-    max-width: 100px;
+    max-width: 200px;
   }
 
   .header-links {
