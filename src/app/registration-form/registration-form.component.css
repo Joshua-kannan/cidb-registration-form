@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
 }
 
 .header-title {
@@ -28,6 +29,7 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .form-container {
@@ -36,7 +38,7 @@
   padding: 40px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -47,7 +49,7 @@ h2 {
 }
 
 h3 {
-  color: #990000;
+  color: #000000;
   font-size: 18px;
   margin: 30px 0 10px;
 }
@@ -72,12 +74,40 @@ mat-form-field {
   width: 100%;
 }
 
-mat-error, mat-hint {
+mat-error {
   font-size: 12px;
+  color: #c80000;
 }
 
-mat-error {
-  color: #990000;
+/* Set input text color to black */
+mat-form-field input,
+mat-form-field select,
+mat-form-field .mat-select {
+  color: rgb(42, 41, 41) !important;
+}
+
+mat-form-field .mat-label,
+mat-form-field .mat-hint {
+  color: rgb(41, 39, 39);
+}
+
+/* Keep input and select text black on focus */
+mat-form-field input:focus,
+mat-form-field select:focus,
+mat-form-field .mat-select:focus {
+  color: rgb(29, 29, 29) !important;
+}
+
+/* Ensure the selected option text color is black */
+.mat-select-value {
+  color: rgb(42, 41, 41) !important;
+}
+
+/* Set color for disabled input */
+mat-form-field input[disabled],
+mat-form-field select[disabled],
+mat-form-field .mat-select[disabled] {
+  color: rgb(29, 28, 28);
 }
 
 /* Button */
@@ -107,16 +137,13 @@ mat-error {
   margin: 5px 0;
 }
 
-/* Change color of invalid criteria to red */
 .password-criteria li.invalid {
   color: red;
 }
 
-/* Keep valid criteria green */
 .password-criteria li.valid {
   color: rgb(3, 155, 14);
 }
-
 
 /* Responsiveness */
 @media (max-width: 768px) {
@@ -126,7 +153,7 @@ mat-error {
   }
 
   .logo {
-    max-width: 120px;
+    max-width: 260px;
   }
 
   .header-links {
@@ -149,6 +176,23 @@ mat-error {
 
   .submit-btn {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+  }
+
+  .header-title {
+    margin: 0 15px;
+  }
+
+  .header-links {
+    font-size: 18px;
+    margin-left: 10px;
   }
 }
 
