@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';  // Import your standalone component
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,  // Enable standalone mode
+  imports: [RegistrationFormComponent]  // Import the standalone registration form component
 })
 export class AppComponent {
-  title = 'cidb-registration-form';
+  title = 'registration-form';  // Optional
 }

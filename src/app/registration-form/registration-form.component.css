@@ -1,0 +1,180 @@
+/* General Page and Layout */
+.page-container {
+  background-color: #e9ebf0;
+}
+
+.header {
+  background-color: #1265b7;
+  color: white;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+}
+
+.logo {
+  max-width: 250px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-links, .login-link {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h3 {
+  color: #990000;
+  font-size: 18px;
+  margin: 30px 0 10px;
+}
+
+/* Form Field Styling */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+}
+
+.half-width {
+  width: 48%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-error, mat-hint {
+  font-size: 12px;
+}
+
+mat-error {
+  color: #990000;
+}
+
+/* Button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #0066cc;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #0052a3;
+}
+
+/* Password Criteria */
+.password-criteria {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+  font-size: 12px;
+}
+
+.password-criteria li {
+  margin: 5px 0;
+}
+
+/* Change color of invalid criteria to red */
+.password-criteria li.invalid {
+  color: red;
+}
+
+/* Keep valid criteria green */
+.password-criteria li.valid {
+  color: rgb(3, 155, 14);
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  .header-links {
+    font-size: 16px;
+  }
+
+  .form-container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .half-width {
+    width: 100%;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 100px;
+  }
+
+  .header-links {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    font-size: 12px;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+}
