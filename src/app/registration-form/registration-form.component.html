@@ -89,7 +89,7 @@
         <mat-form-field class="half-width" appearance="outline">
           <mat-label>Phone No.</mat-label>
           <input matInput [formControl]="phone" type="tel" placeholder="+6" required />
-          <mat-error *ngIf="phone.invalid && phone.touched">Phone No. is required</mat-error>
+          <mat-error *ngIf="phone.invalid && phone.touched">Add Country code before number</mat-error>
         </mat-form-field>
 
         <mat-form-field class="half-width" appearance="outline">
