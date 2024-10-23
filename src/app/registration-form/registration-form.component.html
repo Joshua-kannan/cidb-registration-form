@@ -42,14 +42,15 @@
         </mat-form-field>
       </div>
 
-      <!-- Password Strength Criteria -->
-      <ul class="password-criteria">
-        <li *ngIf="!passwordLength" class="invalid">Minimum 8 characters</li>
-        <li *ngIf="!hasUppercase" class="invalid">One uppercase letter</li>
-        <li *ngIf="!hasLowercase" class="invalid">One lowercase letter</li>
-        <li *ngIf="!hasNumber" class="invalid">One number</li>
-        <li *ngIf="!hasSpecialChar" class="invalid">One special character</li>
-      </ul>
+ <!-- Password Strength Criteria -->
+<ul class="password-criteria">
+  <li [ngClass]="{'valid': passwordLength, 'invalid': !passwordLength}">Minimum 8 characters</li>
+  <li [ngClass]="{'valid': hasUppercase, 'invalid': !hasUppercase}">One uppercase letter</li>
+  <li [ngClass]="{'valid': hasLowercase, 'invalid': !hasLowercase}">One lowercase letter</li>
+  <li [ngClass]="{'valid': hasNumber, 'invalid': !hasNumber}">One number</li>
+  <li [ngClass]="{'valid': hasSpecialChar, 'invalid': !hasSpecialChar}">One special character</li>
+</ul>
+
 
       <!-- Personal Details Section -->
       <h3>Personal Details</h3>

@@ -1,30 +1,37 @@
 /* General Page and Layout */
 .page-container {
   background-color: #e9ebf0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding: 0; /* Optional: Add some padding to the sides if needed */
 }
 
 .header {
   background-color: #1265b7;
   color: white;
-  padding: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+  position: relative;
+  z-index: 1; /* Ensure the header stays below the form */
+  height: 150px; /* Adjusted header height */
+  width:100%; /* Ensure the header takes full width */
+  box-sizing: border-box; /* Include padding and border in element's total width */
 }
 
 .header-title {
   flex: 1;
-  text-align: center;
+  text-align: top;
 }
 
 .logo {
-  max-width: 250px;
+  max-width: 450px; /* Adjusted logo size */
   font-size: 20px;
   font-weight: bold;
 }
 
-.header-links, .login-link {
+.header-links,
+.login-link {
   font-size: 20px;
   color: white;
   text-decoration: none;
@@ -32,13 +39,21 @@
   margin-left: 10px;
 }
 
+.login-links { /* New class for login links */
+  margin-left: 20px; /* Adjust this value to move the links left */
+}
+
 .form-container {
-  max-width: 750px;
-  margin: 40px auto;
-  padding: 40px;
+  max-width: 1000px;
+  margin: -50px auto 40px; /* Adjust negative margin to overlap the header */
+  padding: 50px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2; /* Form will appear above the header */
+  width: calc(100% - 20px); /* Full width minus padding */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 h2 {
@@ -52,6 +67,7 @@ h3 {
   color: #000000;
   font-size: 18px;
   margin: 30px 0 10px;
+  margin-top: 1px;
 }
 
 /* Form Field Styling */
@@ -150,19 +166,23 @@ mat-form-field .mat-select[disabled] {
   .header {
     padding: 20px;
     flex-direction: column;
+    height: auto; /* Allow header to resize based on content */
+    align-items: center; /* Align items to start */
   }
 
   .logo {
-    max-width: 260px;
+    max-width: 400px; /* Adjusted logo size */
   }
 
   .header-links {
     font-size: 16px;
+    margin-left: 0; /* Remove left margin to center align */
   }
 
   .form-container {
     padding: 20px;
-    width: 90%;
+    width: calc(100% - 20px); /* Full width minus padding */
+    margin: -12px auto 20px; /* Adjust negative margin to overlap the header */
   }
 
   .form-group {
@@ -197,13 +217,24 @@ mat-form-field .mat-select[disabled] {
 }
 
 @media (max-width: 480px) {
-
-  .header-links, .login-link {
-    font-size: 15px;
-
+  .header {
+    align-items: center;
   }
+
+  .form-container {
+    margin: -12px auto 20px; /* Adjust negative margin to overlap the header */
+    width: 98%;
+      padding: 15px;
+    }
+  }
+
+  .header-links,
+  .login-link {
+    font-size: 15px;
+  }
+
   .logo {
-    max-width: 200px;
+    max-width: 400px; /* Adjusted logo size for smaller screens */
   }
 
   .header-links {
@@ -226,4 +257,4 @@ mat-form-field .mat-select[disabled] {
   .form-container {
     padding: 15px;
   }
-}
+

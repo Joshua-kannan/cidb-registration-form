@@ -62,9 +62,23 @@ export class RegistrationFormComponent {
     this.hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
   }
 
+  // Check form validity before enabling the submit button
+  isFormValid(): boolean {
+    return this.nric.valid &&
+           this.password.valid &&
+           this.confirmPassword.valid &&
+           this.firstName.valid &&
+           this.dob.valid &&
+           this.email.valid &&
+           this.phone.valid &&
+           this.gender.valid &&
+           this.nationality.valid &&
+           !this.passwordMismatch;
+  }
+
   // Submit action
   submitForm() {
-    if (!this.passwordMismatch) {
+    if (this.isFormValid()) {
       console.log('Form submitted:', {
         nric: this.nric.value,
         password: this.password.value,
@@ -76,7 +90,7 @@ export class RegistrationFormComponent {
         nationality: this.nationality.value
       });
     } else {
-      console.log('Password mismatch error');
+      console.log('Password mismatch error or form is invalid');
     }
   }
 }
